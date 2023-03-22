@@ -1,0 +1,3 @@
+ng generate component products/pages/products
+ng generate service products/services/products
+npm i @angular/material --force
