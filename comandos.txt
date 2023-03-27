@@ -5,3 +5,7 @@ ng g c products/pages/product-detail
 
 ng g s users/services/user
 ng g s users/services/auth
+
+ng g c users/pages/session
+ng g c users/pages/create
+

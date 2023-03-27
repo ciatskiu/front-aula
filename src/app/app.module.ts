@@ -8,6 +8,8 @@ import { ProductsComponent } from './products/pages/products/products.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './products/pages/product-detail/product-detail.component';
+import { SessionComponent } from './users/pages/session/session.component';
+import { CreateComponent } from './users/pages/create/create.component';
 
 
 
@@ -15,7 +17,9 @@ import { ProductDetailComponent } from './products/pages/product-detail/product-
   declarations: [
     AppComponent,
     ProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SessionComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

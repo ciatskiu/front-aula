@@ -1,0 +1,12 @@
+<h3>API de Cadastro de Produtos</h3>
+<h5>Cadastro de Usuários</h5>
+<form [formGroup]="form_create" (ngSubmit)="submitForm()">
+    <label>Nome: </label>
+    <input formControlName = "name"> <br />
+    <label>Email: </label>
+    <input formControlName = "email"> <br />
+    <label>Senha: </label>
+    <input formControlName = "password" type="password"> <br />
+    <button type="submit">Cadastrar</button>
+</form>
+<hr>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import Product from '../models/Product';
+import { AuthService } from 'src/app/users/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,17 @@ import Product from '../models/Product';
 export class ProductsService {
   private apiURL : string = 'http://localhost:3333';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private authService: AuthService) {
+
+    }
 
   listarTodos(){
-    return this.http.get<Product[]>(`${this.apiURL}/products`);
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders()
+    .set('Authorization', `bearer ${token}`);
+    return this.http
+    .get<Product[]>(`${this.apiURL}/products`, {headers : headers});
   }
 
   listarProduto(id: string){
