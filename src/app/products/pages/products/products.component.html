@@ -13,6 +13,11 @@
   <li>
     <p><b>Produto: {{product.name}}</b></p>
     <p>Quantidade: {{product.quantity}} - Preço: {{product.price}}</p>
+    <p>
+      <button (click)="editar(product)">Editar</button>
+      <button style="color: red" (click)="excluir(product)">Excluir</button>
+    </p>
+
   </li>
 </ul>
 

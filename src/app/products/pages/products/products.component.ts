@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Product from '../../models/Product';
 import { ProductsService } from '../../services/products.service';
 
@@ -14,6 +15,7 @@ export class ProductsComponent implements OnInit {
   isSubmitted: boolean = false;
 
   constructor(private productService: ProductsService,
+    private router: Router,
     private formBuilder: FormBuilder) {
     this.form_cadastrar = this.formBuilder.group({
       name: ["", [Validators.required]],
@@ -44,8 +46,9 @@ export class ProductsComponent implements OnInit {
     )
   }
 
-  editar(){
-    // this.router.navigate(['product-detail', product.id]);
+  editar(product: Product){
+    console.log(product);
+    this.router.navigate(['product-detail', product.id]);
   }
 
   excluir(produto: Product){

@@ -1,3 +1,7 @@
 ng generate component products/pages/products
 ng generate service products/services/products
 npm i @angular/material --force
+ng g c products/pages/product-detail
+
+ng g s users/services/user
+ng g s users/services/auth
